@@ -23,10 +23,10 @@ make install && \
 cp -av /usr/local/lib/libzip* /lib/x86_64-linux-gnu/
 
 RUN cmake --no-warn-unused-cli -H. -Bbuild-cmake -GNinja -DCMAKE_BUILD_TYPE:STRING=Release && \
-cmake --build build-cmake --config Release --target Generate2ShipOtr -j3
+cmake --build build-cmake --config Release --target Generate2ShipOtr -j16
 
 RUN cmake --no-warn-unused-cli -H. -Bbuild-cmake -GNinja -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_REMOTE_CONTROL=1 && \
-cmake --build build-cmake --config Release -j3 && \
+cmake --build build-cmake --config Release -j16 && \
 (cd build-cmake && cpack -G External)
 
 FROM scratch
