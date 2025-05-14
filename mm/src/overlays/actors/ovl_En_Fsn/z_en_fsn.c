@@ -141,11 +141,11 @@ u16 EnFsn_GetWelcome(PlayState* play) {
             return 0x29CC;
 
         case PLAYER_MASK_DEKU:
-            return 0x29FC;
+            return GameInteractor_Should(VB_CURIOSITY_SHOP_RACIST, true) ? 0x29FC : 0x29CC;
 
         case PLAYER_MASK_GORON:
         case PLAYER_MASK_ZORA:
-            return 0x29FD;
+            return GameInteractor_Should(VB_CURIOSITY_SHOP_RACIST, true) ? 0x29FD : 0x29CC;
 
         case PLAYER_MASK_KAFEIS_MASK:
             return 0x2364;
@@ -831,7 +831,11 @@ void EnFsn_BeginInteraction(EnFsn* this, PlayState* play) {
         if (CutsceneManager_IsNext(this->csId)) {
             CutsceneManager_StartWithPlayerCsAndSetFlag(this->csId, &this->actor);
             this->cutsceneState = ENFSN_CUTSCENESTATE_PLAYING;
-            if (Player_GetMask(play) == PLAYER_MASK_NONE) {
+            if (Player_GetMask(play) == PLAYER_MASK_NONE ||
+                (!GameInteractor_Should(VB_CURIOSITY_SHOP_RACIST, true) &&
+                 (Player_GetMask(play) == PLAYER_MASK_DEKU ||
+                  Player_GetMask(play) == PLAYER_MASK_GORON ||
+                  Player_GetMask(play) == PLAYER_MASK_ZORA))) {
                 Interface_SetAButtonDoAction(play, DO_ACTION_NEXT);
                 if (EnFsn_HasItemsToSell()) {
                     this->actionFunc = EnFsn_AskBuyOrSell;

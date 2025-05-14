@@ -24,6 +24,7 @@ void InitEnhancements() {
     RegisterSavingEnhancements();
     RegisterAutosave();
     RegisterDekuDamageSuttari();
+    RegisterNotRacistCuriosityShop();
     RegisterKeepExpressMail();
 
     // Dialogue

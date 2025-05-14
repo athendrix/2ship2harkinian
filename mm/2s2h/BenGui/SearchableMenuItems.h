@@ -1151,12 +1151,20 @@ void AddEnhancements() {
                 WIDGET_CVAR_CHECKBOX },
               { .widgetName = "3 Day 100%", .widgetType = WIDGET_SEPARATOR_TEXT },
               {
-                  .widgetName = "Allow Deku Link to Damage Sakon",
+                  .widgetName = "Allow Deku Link to damage Sakon",
                   .widgetCVar = "gEnhancements.Cycle.DekuDamageSuttari",
                   .widgetTooltip = "Allows the player to damage Sakon the Thief as Deku Link allowing the player to obtain the "
                                    "Blast Mask and the All-Night Mask in the first Deku Link Only cycle",
                   .widgetType = WIDGET_CVAR_CHECKBOX,
                   .widgetCallback = [](widgetInfo& info) { RegisterDekuDamageSuttari(); },
+              },
+              {
+                  .widgetName = "Make Curiosity Shop not racist",
+                  .widgetCVar = "gEnhancements.Cycle.NotRacistCuriosityShop",
+                  .widgetTooltip = "Allows the player to shop at the curiosity shop regardless of race. "
+                                   "This lets you purchase the All-Night Mask in the first Deku Link Only cycle",
+                  .widgetType = WIDGET_CVAR_CHECKBOX,
+                  .widgetCallback = [](widgetInfo& info) { RegisterNotRacistCuriosityShop(); },
               },
               {
                   .widgetName = "Keep Express Mail",

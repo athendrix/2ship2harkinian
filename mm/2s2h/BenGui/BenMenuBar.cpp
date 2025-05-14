@@ -539,10 +539,16 @@ void DrawEnhancementsMenu() {
 
             ImGui::SeparatorText("3 Day 100%");
             if (UIWidgets::CVarCheckbox(
-                    "Allow Deku Link to Damage Sakon", "gEnhancements.Cycle.DekuDamageSuttari",
+                    "Allow Deku Link to damage Sakon", "gEnhancements.Cycle.DekuDamageSuttari",
                     { .tooltip = "Allows the player to damage Sakon the Thief as Deku Link allowing the player to obtain the "
                                  "Blast Mask and the All-Night Mask in the first Deku Link Only cycle" })) {
                 RegisterDekuDamageSuttari();
+            }
+            if (UIWidgets::CVarCheckbox(
+                    "Make Curiosity Shop not racist", "gEnhancements.Cycle.NotRacistCuriosityShop",
+                    { .tooltip = "Allows the player to shop at the curiosity shop regardless of race. "
+                                 "This lets you purchase the All-Night Mask in the first Deku Link Only cycle" })) {
+                RegisterNotRacistCuriosityShop();
             }
             if (UIWidgets::CVarCheckbox(
                     "Keep Express Mail", "gEnhancements.Cycle.KeepExpressMail",

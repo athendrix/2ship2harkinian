@@ -73,6 +73,7 @@ typedef enum {
     VB_MAGIC_SPIN_ATTACK_CHECK_FORM,
     VB_TRANSFORM_THUNDER_MATRIX,
     VB_SUTTARI_IMMUNE_DEKU,
+    VB_CURIOSITY_SHOP_RACIST,
 } GIVanillaBehavior;
 
 typedef enum {
