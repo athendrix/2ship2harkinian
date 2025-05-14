@@ -1149,6 +1149,15 @@ void AddEnhancements() {
               { "Do not reset Time Speed", "gEnhancements.Cycle.DoNotResetTimeSpeed",
                 "Playing the Song Of Time will not reset the current time speed set by Inverted Song of Time.",
                 WIDGET_CVAR_CHECKBOX },
+              { .widgetName = "3 Day 100%", .widgetType = WIDGET_SEPARATOR_TEXT },
+              {
+                  .widgetName = "Allow Deku Link to Damage Sakon",
+                  .widgetCVar = "gEnhancements.Cycle.DekuDamageSuttari",
+                  .widgetTooltip = "Allows the player to damage Sakon the Thief as Deku Link allowing the player to obtain the "
+                                   "Blast Mask and the All-Night Mask in the first Deku Link Only cycle",
+                  .widgetType = WIDGET_CVAR_CHECKBOX,
+                  .widgetCallback = [](widgetInfo& info) { RegisterDekuDamageSuttari(); },
+              },
               {
                   .widgetName = "Keep Express Mail",
                   .widgetCVar = "gEnhancements.Cycle.KeepExpressMail",

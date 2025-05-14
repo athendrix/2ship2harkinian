@@ -23,6 +23,7 @@ void InitEnhancements() {
     RegisterEndOfCycleSaveHooks();
     RegisterSavingEnhancements();
     RegisterAutosave();
+    RegisterDekuDamageSuttari();
     RegisterKeepExpressMail();
 
     // Dialogue

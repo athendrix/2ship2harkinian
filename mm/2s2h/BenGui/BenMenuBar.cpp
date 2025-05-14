@@ -537,6 +537,13 @@ void DrawEnhancementsMenu() {
                 { .tooltip =
                       "Playing the Song Of Time will not reset the current time speed set by Inverted Song of Time." });
 
+            ImGui::SeparatorText("3 Day 100%");
+            if (UIWidgets::CVarCheckbox(
+                    "Allow Deku Link to Damage Sakon", "gEnhancements.Cycle.DekuDamageSuttari",
+                    { .tooltip = "Allows the player to damage Sakon the Thief as Deku Link allowing the player to obtain the "
+                                 "Blast Mask and the All-Night Mask in the first Deku Link Only cycle" })) {
+                RegisterDekuDamageSuttari();
+            }
             if (UIWidgets::CVarCheckbox(
                     "Keep Express Mail", "gEnhancements.Cycle.KeepExpressMail",
                     { .tooltip = "Allows the player to keep the Express Mail in their inventory after delivering it "
