@@ -1167,6 +1167,14 @@ void AddEnhancements() {
                   .widgetCallback = [](widgetInfo& info) { RegisterNotRacistCuriosityShop(); },
               },
               {
+                  .widgetName = "Allow bank money for AN Mask",
+                  .widgetCVar = "gEnhancements.Cycle.AllNightMaskWithBankMoney",
+                  .widgetTooltip = "Allows the player to use their bank money to purchase the All-Night Mask. "
+                                   "This lets you purchase the All-Night Mask in the first Deku Link Only cycle",
+                  .widgetType = WIDGET_CVAR_CHECKBOX,
+                  .widgetCallback = [](widgetInfo& info) { RegisterAllNightMaskWithBankMoney(); },
+              },
+              {
                   .widgetName = "Keep Express Mail",
                   .widgetCVar = "gEnhancements.Cycle.KeepExpressMail",
                   .widgetTooltip = "Allows the player to keep the Express Mail in their inventory after delivering it "

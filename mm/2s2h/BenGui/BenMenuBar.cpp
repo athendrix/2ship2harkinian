@@ -551,6 +551,12 @@ void DrawEnhancementsMenu() {
                 RegisterNotRacistCuriosityShop();
             }
             if (UIWidgets::CVarCheckbox(
+                    "Allow bank money for AN Mask", "gEnhancements.Cycle.AllNightMaskWithBankMoney",
+                    { .tooltip = "Allows the player to use their bank money to purchase the All-Night Mask. "
+                                 "This lets you purchase the All-Night Mask in the first Deku Link Only cycle" })) {
+                RegisterAllNightMaskWithBankMoney();
+            }
+            if (UIWidgets::CVarCheckbox(
                     "Keep Express Mail", "gEnhancements.Cycle.KeepExpressMail",
                     { .tooltip = "Allows the player to keep the Express Mail in their inventory after delivering it "
                                  "the first time, so that both deliveries can be done within one cycle" })) {

@@ -74,6 +74,7 @@ typedef enum {
     VB_TRANSFORM_THUNDER_MATRIX,
     VB_SUTTARI_IMMUNE_DEKU,
     VB_CURIOSITY_SHOP_RACIST,
+    VB_NOT_OVERFLOW_BANK,
 } GIVanillaBehavior;
 
 typedef enum {
