@@ -6,6 +6,7 @@
 
 #include "z_en_nb.h"
 #include "objects/object_nb/object_nb.h"
+#include "2s2h/GameInteractor/GameInteractor.h"
 
 #define FLAGS (ACTOR_FLAG_TARGETABLE | ACTOR_FLAG_FRIENDLY | ACTOR_FLAG_10 | ACTOR_FLAG_20)
 
@@ -505,11 +506,14 @@ s32 func_80BC01DC(Actor* thisx, PlayState* play) {
             this->behaviour++;
             // fallthrough
         case ENNB_BEHAVIOUR_5:
-            if (!CHECK_EVENTINF(EVENTINF_42)) {
-                gSaveContext.save.time = CLOCK_TIME(8, 0);
-                Sram_IncrementDay();
-            } else {
-                Environment_SetTimeJump(120.0f);
+            if(Player_GetMask(play) != PLAYER_MASK_ALL_NIGHT || GameInteractor_Should(VB_ALL_NIGHT_TIME_SKIP, true))
+            {
+                if (!CHECK_EVENTINF(EVENTINF_42)) {
+                    gSaveContext.save.time = CLOCK_TIME(8, 0);
+                    Sram_IncrementDay();
+                } else {
+                    Environment_SetTimeJump(120.0f);
+                }
             }
 
             this->behaviour++;

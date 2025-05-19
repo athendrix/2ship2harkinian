@@ -75,6 +75,7 @@ typedef enum {
     VB_SUTTARI_IMMUNE_DEKU,
     VB_CURIOSITY_SHOP_RACIST,
     VB_NOT_OVERFLOW_BANK,
+    VB_ALL_NIGHT_TIME_SKIP,
 } GIVanillaBehavior;
 
 typedef enum {

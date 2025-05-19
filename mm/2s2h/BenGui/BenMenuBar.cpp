@@ -557,6 +557,12 @@ void DrawEnhancementsMenu() {
                 RegisterAllNightMaskWithBankMoney();
             }
             if (UIWidgets::CVarCheckbox(
+                    "No timeskip with AN Mask", "gEnhancements.Cycle.AllNightMaskNoTimeSkip",
+                    { .tooltip = "Normally, listening to Anju's Grandmother's stories will skip you forward in time. "
+                                 "This simply disables that so you don't skip forward if you're wearing the All-Night Mask" })) {
+                RegisterAllNightMaskNoTimeSkip();
+            }
+            if (UIWidgets::CVarCheckbox(
                     "Keep Express Mail", "gEnhancements.Cycle.KeepExpressMail",
                     { .tooltip = "Allows the player to keep the Express Mail in their inventory after delivering it "
                                  "the first time, so that both deliveries can be done within one cycle" })) {

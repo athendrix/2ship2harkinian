@@ -1175,6 +1175,14 @@ void AddEnhancements() {
                   .widgetCallback = [](widgetInfo& info) { RegisterAllNightMaskWithBankMoney(); },
               },
               {
+                  .widgetName = "No timeskip with AN Mask",
+                  .widgetCVar = "gEnhancements.Cycle.AllNightMaskNoTimeSkip",
+                  .widgetTooltip = "Normally, listening to Anju's Grandmother's stories will skip you forward in time. "
+                                   "This simply disables that so you don't skip forward if you're wearing the All-Night Mask",
+                  .widgetType = WIDGET_CVAR_CHECKBOX,
+                  .widgetCallback = [](widgetInfo& info) { RegisterAllNightMaskNoTimeSkip(); },
+              },
+              {
                   .widgetName = "Keep Express Mail",
                   .widgetCVar = "gEnhancements.Cycle.KeepExpressMail",
                   .widgetTooltip = "Allows the player to keep the Express Mail in their inventory after delivering it "

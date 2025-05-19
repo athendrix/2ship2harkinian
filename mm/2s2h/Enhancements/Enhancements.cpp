@@ -26,6 +26,7 @@ void InitEnhancements() {
     RegisterDekuDamageSuttari();
     RegisterNotRacistCuriosityShop();
     RegisterAllNightMaskWithBankMoney();
+    RegisterAllNightMaskNoTimeSkip();
     RegisterKeepExpressMail();
 
     // Dialogue

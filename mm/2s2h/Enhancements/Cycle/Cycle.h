@@ -5,6 +5,7 @@ void RegisterEndOfCycleSaveHooks();
 void RegisterDekuDamageSuttari();
 void RegisterNotRacistCuriosityShop();
 void RegisterAllNightMaskWithBankMoney();
+void RegisterAllNightMaskNoTimeSkip();
 void RegisterKeepExpressMail();
 
 #endif // CYCLE_H
