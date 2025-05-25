@@ -985,11 +985,6 @@ void BenMenu::AddEnhancements() {
         .CVar("gEnhancements.Cycle.DoNotResetTimeSpeed")
         .Options(CheckboxOptions().Tooltip(
             "Playing the Song of Time will not reset the current time speed set by Inverted Song of Time."));
-    AddWidget(path, "Stop Oceanside Spider House squatter", WIDGET_CVAR_CHECKBOX)
-        .CVar("gEnhancements.Cycle.StopOceansideSpiderHouseSquatter")
-        .Options(
-            CheckboxOptions().Tooltip("The Oceanside Spider House squatter will not move in until the player interacts "
-                                      "with him. Forced on for randomizers."));
     AddWidget(path, "Unstable", WIDGET_SEPARATOR_TEXT).Options(WidgetOptions().Color(Colors::Orange));
     AddWidget(path, "Disable Save Delay", WIDGET_CVAR_CHECKBOX)
         .CVar("gEnhancements.Saving.DisableSaveDelay")
@@ -1416,6 +1411,12 @@ void BenMenu::AddEnhancements() {
         .Options(CheckboxOptions().Tooltip(
             "Allows the player to keep the Express Mail in their inventory after delivering it "
             "the first time, so that both deliveries can be done within one cycle."));
+    AddWidget(path, "3 Day 100% - Optional", WIDGET_SEPARATOR_TEXT);
+    AddWidget(path, "Stop Oceanside Spider House squatter", WIDGET_CVAR_CHECKBOX)
+        .CVar("gEnhancements.DifficultyOptions.StopOceansideSpiderHouseSquatter")
+        .Options(
+            CheckboxOptions().Tooltip("The Oceanside Spider House squatter will not move in until the player interacts "
+                                      "with him. Forced on for randomizers."));
     // HUD Editor
     path = { "Enhancements", "HUD Editor", SECTION_COLUMN_1 };
     AddSidebarEntry("Enhancements", "HUD Editor", 1);
