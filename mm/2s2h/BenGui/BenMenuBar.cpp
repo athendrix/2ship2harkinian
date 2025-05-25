@@ -563,6 +563,12 @@ void DrawEnhancementsMenu() {
                 RegisterAllNightMaskNoTimeSkip();
             }
             if (UIWidgets::CVarCheckbox(
+                    "Mayor argues until Moonfall", "gEnhancements.Cycle.MayorArguesUntilMoonfall",
+                    { .tooltip = "Normally, the mayor, the soldiers, and craftsmen will stop arguing by night on the third day. "
+                                 "This keeps them arguing so you can show them the Couple's Mask for the Piece of Heart" })) {
+                RegisterMayorArguesUntilMoonfall();
+            }
+            if (UIWidgets::CVarCheckbox(
                     "Keep Express Mail", "gEnhancements.Cycle.KeepExpressMail",
                     { .tooltip = "Allows the player to keep the Express Mail in their inventory after delivering it "
                                  "the first time, so that both deliveries can be done within one cycle" })) {

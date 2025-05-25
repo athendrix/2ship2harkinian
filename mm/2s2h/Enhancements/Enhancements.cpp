@@ -27,6 +27,7 @@ void InitEnhancements() {
     RegisterNotRacistCuriosityShop();
     RegisterAllNightMaskWithBankMoney();
     RegisterAllNightMaskNoTimeSkip();
+    RegisterMayorArguesUntilMoonfall();
     RegisterKeepExpressMail();
 
     // Dialogue

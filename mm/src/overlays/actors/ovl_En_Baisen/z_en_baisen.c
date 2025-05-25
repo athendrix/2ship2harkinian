@@ -6,6 +6,7 @@
 
 #include "z_en_baisen.h"
 #include "objects/object_bai/object_bai.h"
+#include "2s2h/GameInteractor/GameInteractor.h"
 
 #define FLAGS (ACTOR_FLAG_TARGETABLE | ACTOR_FLAG_FRIENDLY)
 
@@ -86,14 +87,14 @@ void EnBaisen_Init(Actor* thisx, PlayState* play) {
     this->paramCopy = this->actor.params;
     if (this->actor.params == 0) {
         this->unk290 = true;
-        if (!CHECK_WEEKEVENTREG(WEEKEVENTREG_63_80) && ((gSaveContext.save.day != 3) || !gSaveContext.save.isNight)) {
+        if (!CHECK_WEEKEVENTREG(WEEKEVENTREG_63_80) && (!GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true) || (gSaveContext.save.day != 3) || !gSaveContext.save.isNight)) {
             Actor_Kill(&this->actor);
         }
     } else {
         this->collider.dim.radius = 30;
         this->collider.dim.height = 60;
         this->collider.dim.yShift = 0;
-        if (CHECK_WEEKEVENTREG(WEEKEVENTREG_63_80) || ((gSaveContext.save.day == 3) && gSaveContext.save.isNight)) {
+        if (CHECK_WEEKEVENTREG(WEEKEVENTREG_63_80) || (GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true) && (gSaveContext.save.day == 3) && gSaveContext.save.isNight)) {
             Actor_Kill(&this->actor);
         }
     }
@@ -261,7 +262,7 @@ void EnBaisen_Update(Actor* thisx, PlayState* play) {
         this->unusedCounter--;
     }
     this->actor.shape.rot.y = this->actor.world.rot.y;
-    if ((this->paramCopy != 0) && (gSaveContext.save.day == 3) && gSaveContext.save.isNight) {
+    if (GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true) && (this->paramCopy != 0) && (gSaveContext.save.day == 3) && gSaveContext.save.isNight) {
         Actor_Kill(&this->actor);
         return;
     }

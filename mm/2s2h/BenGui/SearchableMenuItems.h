@@ -1183,6 +1183,14 @@ void AddEnhancements() {
                   .widgetCallback = [](widgetInfo& info) { RegisterAllNightMaskNoTimeSkip(); },
               },
               {
+                  .widgetName = "Mayor argues until Moonfall",
+                  .widgetCVar = "gEnhancements.Cycle.MayorArguesUntilMoonfall",
+                  .widgetTooltip = "Normally, the mayor, the soldiers, and craftsmen will stop arguing by night on the third day. "
+                                 "This keeps them arguing so you can show them the Couple's Mask for the Piece of Heart",
+                  .widgetType = WIDGET_CVAR_CHECKBOX,
+                  .widgetCallback = [](widgetInfo& info) { RegisterMayorArguesUntilMoonfall(); },
+              },
+              {
                   .widgetName = "Keep Express Mail",
                   .widgetCVar = "gEnhancements.Cycle.KeepExpressMail",
                   .widgetTooltip = "Allows the player to keep the Express Mail in their inventory after delivering it "

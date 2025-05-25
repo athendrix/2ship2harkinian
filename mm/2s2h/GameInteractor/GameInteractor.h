@@ -76,6 +76,7 @@ typedef enum {
     VB_CURIOSITY_SHOP_RACIST,
     VB_NOT_OVERFLOW_BANK,
     VB_ALL_NIGHT_TIME_SKIP,
+    VB_MAYOR_STOP_ARGUING,
 } GIVanillaBehavior;
 
 typedef enum {

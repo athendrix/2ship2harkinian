@@ -6,6 +6,7 @@ void RegisterDekuDamageSuttari();
 void RegisterNotRacistCuriosityShop();
 void RegisterAllNightMaskWithBankMoney();
 void RegisterAllNightMaskNoTimeSkip();
+void RegisterMayorArguesUntilMoonfall();
 void RegisterKeepExpressMail();
 
 #endif // CYCLE_H
