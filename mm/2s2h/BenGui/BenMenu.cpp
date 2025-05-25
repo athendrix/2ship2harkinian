@@ -985,11 +985,6 @@ void BenMenu::AddEnhancements() {
         .CVar("gEnhancements.Cycle.DoNotResetTimeSpeed")
         .Options(CheckboxOptions().Tooltip(
             "Playing the Song of Time will not reset the current time speed set by Inverted Song of Time."));
-    AddWidget(path, "Keep Express Mail", WIDGET_CVAR_CHECKBOX)
-        .CVar("gEnhancements.Cycle.KeepExpressMail")
-        .Options(CheckboxOptions().Tooltip(
-            "Allows the player to keep the Express Mail in their inventory after delivering it "
-            "the first time, so that both deliveries can be done within one cycle."));
     AddWidget(path, "Stop Oceanside Spider House squatter", WIDGET_CVAR_CHECKBOX)
         .CVar("gEnhancements.Cycle.StopOceansideSpiderHouseSquatter")
         .Options(
@@ -1414,6 +1409,13 @@ void BenMenu::AddEnhancements() {
                 .Max(60)
                 .DefaultValue(60));
 
+    path.column = SECTION_COLUMN_3;
+    AddWidget(path, "3 Day 100%", WIDGET_SEPARATOR_TEXT);
+    AddWidget(path, "Keep Express Mail", WIDGET_CVAR_CHECKBOX)
+        .CVar("gEnhancements.DifficultyOptions.KeepExpressMail")
+        .Options(CheckboxOptions().Tooltip(
+            "Allows the player to keep the Express Mail in their inventory after delivering it "
+            "the first time, so that both deliveries can be done within one cycle."));
     // HUD Editor
     path = { "Enhancements", "HUD Editor", SECTION_COLUMN_1 };
     AddSidebarEntry("Enhancements", "HUD Editor", 1);

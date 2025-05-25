@@ -8,7 +8,7 @@ extern "C" {
 #include "variables.h"
 }
 
-#define CVAR_NAME "gEnhancements.Cycle.KeepExpressMail"
+#define CVAR_NAME "gEnhancements.DifficultyOptions.KeepExpressMail"
 #define CVAR CVarGetInteger(CVAR_NAME, 0)
 
 void RegisterKeepExpressMail() {

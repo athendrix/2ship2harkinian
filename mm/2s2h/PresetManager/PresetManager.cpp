@@ -74,15 +74,15 @@ nlohmann::json curatedPresetJ = R"(
                 "DoNotResetConsumables": 1,
                 "DoNotResetRazorSword": 1,
                 "DoNotResetRupees": 1,
-                "DoNotResetTimeSpeed": 1,
-                "KeepExpressMail": 1
+                "DoNotResetTimeSpeed": 1
             },
             "Dialogue": {
                 "FastBankSelection": 1,
                 "FastText": 1
             },
             "DifficultyOptions": {
-                "LowerBankRewardThresholds": 1
+                "LowerBankRewardThresholds": 1,
+                "KeepExpressMail": 1
             },
             "Dpad": {
                 "DpadEquips": 1
