@@ -1416,6 +1416,11 @@ void BenMenu::AddEnhancements() {
         .Options(CheckboxOptions().Tooltip(
             "Allows the player to shop at the curiosity shop regardless of race. "
             "This lets you purchase the All-Night Mask in the first Deku Link Only cycle."));
+    AddWidget(path, "Allow bank money for AN Mask", WIDGET_CVAR_CHECKBOX)
+        .CVar("gEnhancements.DifficultyOptions.AllNightMaskWithBankMoney")
+        .Options(CheckboxOptions().Tooltip(
+            "Allows the player to use their bank money to purchase the All-Night Mask. "
+            "This lets you purchase the All-Night Mask in the first Deku Link Only cycle."));
     AddWidget(path, "Keep Express Mail", WIDGET_CVAR_CHECKBOX)
         .CVar("gEnhancements.DifficultyOptions.KeepExpressMail")
         .Options(CheckboxOptions().Tooltip(

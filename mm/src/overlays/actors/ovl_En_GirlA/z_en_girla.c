@@ -5,6 +5,7 @@
  */
 
 #include "z_en_girla.h"
+#include "2s2h/GameInteractor/GameInteractor.h"
 
 #define FLAGS (ACTOR_FLAG_TARGETABLE | ACTOR_FLAG_FRIENDLY | ACTOR_FLAG_10)
 
@@ -50,6 +51,7 @@ void EnGirlA_BuySword(PlayState* play, EnGirlA* this);
 void EnGirlA_BuyShieldMirror(PlayState* play, EnGirlA* this);
 
 void EnGirlA_BuyFanfare(PlayState* play, EnGirlA* this);
+void EnGirlA_BuyBankOverflowFanfare(PlayState* play, EnGirlA* this);
 
 ActorInit En_GirlA_InitVars = {
     /**/ ACTOR_EN_GIRLA,
@@ -103,7 +105,7 @@ static ShopItemEntry sShopItemEntries[] = {
     { OBJECT_GI_LIQUID, GID_POTION_RED, func_800B8050, 1, 0x06C9, 0x06CA, GI_POTION_RED, EnGirlA_CanBuyPotionRed,
       EnGirlA_BuyBottleItem, EnGirlA_BuyFanfare },
     { OBJECT_GI_MASK06, GID_MASK_ALL_NIGHT, func_800B8050, 1, 0x29D9, 0x29DA, GI_MASK_ALL_NIGHT,
-      EnGirlA_CanBuyMaskAllNight, EnGirlA_BuyMaskAllNight, EnGirlA_BuyFanfare },
+      EnGirlA_CanBuyMaskAllNight, EnGirlA_BuyMaskAllNight, EnGirlA_BuyBankOverflowFanfare },
     { OBJECT_GI_BOMBPOUCH, GID_BOMB_BAG_20, func_800B8050, 1, 0x29DB, 0x29DC, GI_BOMB_BAG_20,
       EnGirlA_CanBuyBombBagCuriosityShop, EnGirlA_BuyBombBag, EnGirlA_BuyFanfare },
     { OBJECT_GI_BOMBPOUCH, GID_BOMB_BAG_30, func_800B8050, 2, 0x29DB, 0x29DC, GI_BOMB_BAG_30,
@@ -270,7 +272,9 @@ s32 EnGirlA_CanBuyStick(PlayState* play, EnGirlA* this) {
 }
 
 s32 EnGirlA_CanBuyMaskAllNight(PlayState* play, EnGirlA* this) {
-    if (gSaveContext.save.saveInfo.playerData.rupees < play->msgCtx.unk1206C) {
+    if (gSaveContext.save.saveInfo.playerData.rupees < play->msgCtx.unk1206C && 
+    (GameInteractor_Should(VB_NOT_OVERFLOW_BANK, true) || 
+    gSaveContext.save.saveInfo.playerData.rupees + HS_GET_BANK_RUPEES() < play->msgCtx.unk1206C)) {
         return CANBUY_RESULT_NEED_RUPEES;
     }
     return CANBUY_RESULT_SUCCESS_2;
@@ -532,6 +536,19 @@ void EnGirlA_BuyShieldMirror(PlayState* play, EnGirlA* this) {
 // Fanfare is handled by the shopkeeper
 void EnGirlA_BuyFanfare(PlayState* play, EnGirlA* this) {
     Rupees_ChangeBy(-play->msgCtx.unk1206C);
+}
+
+void EnGirlA_BuyBankOverflowFanfare(PlayState* play, EnGirlA* this) {
+    s16 playerRupees = gSaveContext.save.saveInfo.playerData.rupees;
+    s16 cost = play->msgCtx.unk1206C;
+    s16 bankRupees = HS_GET_BANK_RUPEES();
+    if(playerRupees >= cost){
+        Rupees_ChangeBy(-cost);
+    }
+    else{
+        Rupees_ChangeBy(-playerRupees);
+        HS_SET_BANK_RUPEES(bankRupees - (cost - playerRupees));
+    }
 }
 
 void EnGirlA_DoNothing(EnGirlA* this, PlayState* play) {
