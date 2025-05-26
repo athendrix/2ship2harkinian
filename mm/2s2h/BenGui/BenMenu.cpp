@@ -1421,6 +1421,11 @@ void BenMenu::AddEnhancements() {
         .Options(CheckboxOptions().Tooltip(
             "Allows the player to use their bank money to purchase the All-Night Mask. "
             "This lets you purchase the All-Night Mask in the first Deku Link Only cycle."));
+    AddWidget(path, "No timeskip with AN Mask", WIDGET_CVAR_CHECKBOX)
+        .CVar("gEnhancements.DifficultyOptions.AllNightMaskNoTimeSkip")
+        .Options(CheckboxOptions().Tooltip(
+            "Normally, listening to Anju's Grandmother's stories will skip you forward in time. "
+            "This simply disables that so you don't skip forward if you're wearing the All-Night Mask."));
     AddWidget(path, "Keep Express Mail", WIDGET_CVAR_CHECKBOX)
         .CVar("gEnhancements.DifficultyOptions.KeepExpressMail")
         .Options(CheckboxOptions().Tooltip(
