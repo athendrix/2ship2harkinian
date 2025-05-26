@@ -1411,6 +1411,11 @@ void BenMenu::AddEnhancements() {
         .Options(CheckboxOptions().Tooltip(
             "Allows the player to damage Sakon the Thief as Deku Link allowing the player to obtain the "
             "Blast Mask and the All-Night Mask in the first Deku Link Only cycle."));
+    AddWidget(path, "Make Curiosity Shop not racist", WIDGET_CVAR_CHECKBOX)
+        .CVar("gEnhancements.DifficultyOptions.NotRacistCuriosityShop")
+        .Options(CheckboxOptions().Tooltip(
+            "Allows the player to shop at the curiosity shop regardless of race. "
+            "This lets you purchase the All-Night Mask in the first Deku Link Only cycle."));
     AddWidget(path, "Keep Express Mail", WIDGET_CVAR_CHECKBOX)
         .CVar("gEnhancements.DifficultyOptions.KeepExpressMail")
         .Options(CheckboxOptions().Tooltip(

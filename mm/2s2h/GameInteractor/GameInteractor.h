@@ -241,6 +241,7 @@ typedef enum {
     VB_BE_NEAR_DOOR,
     VB_LOAD_PLAYER_ANIMATION_FRAME,
     VB_SUTTARI_IMMUNE_DEKU,
+    VB_CURIOSITY_SHOP_RACIST,
 } GIVanillaBehavior;
 
 typedef enum {
