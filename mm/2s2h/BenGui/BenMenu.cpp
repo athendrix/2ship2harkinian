@@ -1406,6 +1406,11 @@ void BenMenu::AddEnhancements() {
 
     path.column = SECTION_COLUMN_3;
     AddWidget(path, "3 Day 100%", WIDGET_SEPARATOR_TEXT);
+    AddWidget(path, "Deku Link can damage Sakon", WIDGET_CVAR_CHECKBOX)
+        .CVar("gEnhancements.DifficultyOptions.DekuDamageSuttari")
+        .Options(CheckboxOptions().Tooltip(
+            "Allows the player to damage Sakon the Thief as Deku Link allowing the player to obtain the "
+            "Blast Mask and the All-Night Mask in the first Deku Link Only cycle."));
     AddWidget(path, "Keep Express Mail", WIDGET_CVAR_CHECKBOX)
         .CVar("gEnhancements.DifficultyOptions.KeepExpressMail")
         .Options(CheckboxOptions().Tooltip(
