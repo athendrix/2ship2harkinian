@@ -1426,6 +1426,11 @@ void BenMenu::AddEnhancements() {
         .Options(CheckboxOptions().Tooltip(
             "Normally, listening to Anju's Grandmother's stories will skip you forward in time. "
             "This simply disables that so you don't skip forward if you're wearing the All-Night Mask."));
+    AddWidget(path, "Mayor argues until Moonfall", WIDGET_CVAR_CHECKBOX)
+        .CVar("gEnhancements.DifficultyOptions.MayorArguesUntilMoonfall")
+        .Options(CheckboxOptions().Tooltip(
+            "Normally, the mayor, the soldiers, and craftsmen will stop arguing by night on the third day. "
+            "This keeps them arguing so you can show them the Couple's Mask for the Piece of Heart."));
     AddWidget(path, "Keep Express Mail", WIDGET_CVAR_CHECKBOX)
         .CVar("gEnhancements.DifficultyOptions.KeepExpressMail")
         .Options(CheckboxOptions().Tooltip(
