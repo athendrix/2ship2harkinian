@@ -1510,7 +1510,8 @@ void EnSuttari_Init(Actor* thisx, PlayState* play) {
     }
     Collider_InitCylinder(play, &this->collider);
     Collider_InitAndSetCylinder(play, &this->collider, &this->actor, &sCylinderInit);
-    sDamageTable.attack[0xF] = GameInteractor_Should(VB_SUTTARI_IMMUNE_DEKU, true) ? DMG_ENTRY(1, 0x0) : DMG_ENTRY(1, 0xF);
+    sDamageTable.attack[0xF] =
+        GameInteractor_Should(VB_SUTTARI_IMMUNE_DEKU, true) ? DMG_ENTRY(1, 0x0) : DMG_ENTRY(1, 0xF);
     CollisionCheck_SetInfo2(&this->actor.colChkInfo, &sDamageTable, &sColChkInfoInit2);
     this->actor.flags &= ~ACTOR_FLAG_TARGETABLE;
     EnSuttari_GetPaths(this, play);

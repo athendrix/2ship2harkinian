@@ -838,8 +838,7 @@ void EnFsn_BeginInteraction(EnFsn* this, PlayState* play) {
             this->cutsceneState = ENFSN_CUTSCENESTATE_PLAYING;
             if (Player_GetMask(play) == PLAYER_MASK_NONE ||
                 (!GameInteractor_Should(VB_CURIOSITY_SHOP_RACIST, true) &&
-                 (Player_GetMask(play) == PLAYER_MASK_DEKU ||
-                  Player_GetMask(play) == PLAYER_MASK_GORON ||
+                 (Player_GetMask(play) == PLAYER_MASK_DEKU || Player_GetMask(play) == PLAYER_MASK_GORON ||
                   Player_GetMask(play) == PLAYER_MASK_ZORA))) {
                 Interface_SetAButtonDoAction(play, DO_ACTION_NEXT);
                 if (EnFsn_HasItemsToSell()) {

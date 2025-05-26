@@ -75,7 +75,8 @@ void EnMuto_Init(Actor* thisx, PlayState* play) {
             this->textIdIndex = 3;
         }
 
-        if ((!GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true) && !CHECK_WEEKEVENTREG(WEEKEVENTREG_63_80) ) || (gSaveContext.save.day != 3) || !gSaveContext.save.isNight) {
+        if ((!GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true) && !CHECK_WEEKEVENTREG(WEEKEVENTREG_63_80)) ||
+            (gSaveContext.save.day != 3) || !gSaveContext.save.isNight) {
             Actor_Kill(&this->actor);
         }
     } else {
@@ -83,7 +84,8 @@ void EnMuto_Init(Actor* thisx, PlayState* play) {
         this->collider.dim.height = 60;
         this->collider.dim.yShift = 0;
 
-        if (CHECK_WEEKEVENTREG(WEEKEVENTREG_63_80) || (GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true) && (gSaveContext.save.day == 3) && gSaveContext.save.isNight)) {
+        if (CHECK_WEEKEVENTREG(WEEKEVENTREG_63_80) || (GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true) &&
+                                                       (gSaveContext.save.day == 3) && gSaveContext.save.isNight)) {
             Actor_Kill(&this->actor);
         }
     }
@@ -255,7 +257,8 @@ void EnMuto_Update(Actor* thisx, PlayState* play2) {
         EnMuto_SetHeadRotation(this);
     }
 
-    if (GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true) && this->isInMayorsRoom && (gSaveContext.save.day == 3) && gSaveContext.save.isNight) {
+    if (GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true) && this->isInMayorsRoom && (gSaveContext.save.day == 3) &&
+        gSaveContext.save.isNight) {
         Actor_Kill(&this->actor);
         return;
     }

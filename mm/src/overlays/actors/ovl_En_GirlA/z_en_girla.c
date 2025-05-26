@@ -272,9 +272,9 @@ s32 EnGirlA_CanBuyStick(PlayState* play, EnGirlA* this) {
 }
 
 s32 EnGirlA_CanBuyMaskAllNight(PlayState* play, EnGirlA* this) {
-    if (gSaveContext.save.saveInfo.playerData.rupees < play->msgCtx.unk1206C && 
-    (GameInteractor_Should(VB_NOT_OVERFLOW_BANK, true) || 
-    gSaveContext.save.saveInfo.playerData.rupees + HS_GET_BANK_RUPEES() < play->msgCtx.unk1206C)) {
+    if (gSaveContext.save.saveInfo.playerData.rupees < play->msgCtx.unk1206C &&
+        (GameInteractor_Should(VB_NOT_OVERFLOW_BANK, true) ||
+         gSaveContext.save.saveInfo.playerData.rupees + HS_GET_BANK_RUPEES() < play->msgCtx.unk1206C)) {
         return CANBUY_RESULT_NEED_RUPEES;
     }
     return CANBUY_RESULT_SUCCESS_2;
@@ -542,10 +542,9 @@ void EnGirlA_BuyBankOverflowFanfare(PlayState* play, EnGirlA* this) {
     s16 playerRupees = gSaveContext.save.saveInfo.playerData.rupees;
     s16 cost = play->msgCtx.unk1206C;
     s16 bankRupees = HS_GET_BANK_RUPEES();
-    if(playerRupees >= cost){
+    if (playerRupees >= cost) {
         Rupees_ChangeBy(-cost);
-    }
-    else{
+    } else {
         Rupees_ChangeBy(-playerRupees);
         HS_SET_BANK_RUPEES(bankRupees - (cost - playerRupees));
     }

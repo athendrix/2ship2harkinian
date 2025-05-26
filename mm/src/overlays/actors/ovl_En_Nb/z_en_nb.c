@@ -506,7 +506,7 @@ s32 func_80BC01DC(Actor* thisx, PlayState* play) {
             this->behaviour++;
             // fallthrough
         case ENNB_BEHAVIOUR_5:
-            if(Player_GetMask(play) != PLAYER_MASK_ALL_NIGHT || GameInteractor_Should(VB_ALL_NIGHT_TIME_SKIP, true)) {
+            if (Player_GetMask(play) != PLAYER_MASK_ALL_NIGHT || GameInteractor_Should(VB_ALL_NIGHT_TIME_SKIP, true)) {
                 if (!CHECK_EVENTINF(EVENTINF_42)) {
                     gSaveContext.save.time = CLOCK_TIME(8, 0);
                     Sram_IncrementDay();

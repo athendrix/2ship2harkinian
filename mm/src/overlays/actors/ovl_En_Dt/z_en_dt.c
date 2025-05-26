@@ -108,7 +108,8 @@ void EnDt_Init(Actor* thisx, PlayState* play) {
 
     Collider_InitAndSetCylinder(play, &this->collider, &this->actor, &sCylinderInit);
 
-    if (GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true) && (gSaveContext.save.day == 3) && (gSaveContext.save.isNight != 0)) {
+    if (GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true) && (gSaveContext.save.day == 3) &&
+        (gSaveContext.save.isNight != 0)) {
         func_80BEAC84(this, play);
     } else {
         //! FAKE:
@@ -209,12 +210,14 @@ void func_80BE9E94(EnDt* this, PlayState* play) {
         }
         actor = actor->next;
     }
-    if(!GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true)) {
-        if(this->unk_274 == NULL || this->unk_274 == 0) {
-            this->unk_274 = (EnMuto*) Actor_Spawn(&play->actorCtx, play, ACTOR_EN_MUTO, -245.0f, 0.0f, -314.0f, 0, 16384, 0, 1);
+    if (!GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true)) {
+        if (this->unk_274 == NULL || this->unk_274 == 0) {
+            this->unk_274 =
+                (EnMuto*)Actor_Spawn(&play->actorCtx, play, ACTOR_EN_MUTO, -245.0f, 0.0f, -314.0f, 0, 16384, 0, 1);
         }
-        if(this->unk_278 == NULL || this->unk_278 == 0) {
-            this->unk_278 = (EnBaisen*) Actor_Spawn(&play->actorCtx, play, ACTOR_EN_BAISEN, -84.0f, 0.0f, -315.0f, 0, -16384, 0, 1);
+        if (this->unk_278 == NULL || this->unk_278 == 0) {
+            this->unk_278 =
+                (EnBaisen*)Actor_Spawn(&play->actorCtx, play, ACTOR_EN_BAISEN, -84.0f, 0.0f, -315.0f, 0, -16384, 0, 1);
         }
     }
     func_80BE9EF8(this, play);
@@ -619,7 +622,7 @@ void EnDt_Update(Actor* thisx, PlayState* play) {
     SkelAnime_Update(&this->skelanime);
     Actor_SetScale(&this->actor, 0.01f);
 
-    if(GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true)) {
+    if (GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true)) {
         if ((this->unk_254 != 4) && (this->unk_254 != 5) && (gSaveContext.save.day == 3) &&
             (gSaveContext.save.isNight != 0)) {
             func_80BEAC84(this, play);
@@ -627,7 +630,8 @@ void EnDt_Update(Actor* thisx, PlayState* play) {
     }
 
     if (!(gSaveContext.save.saveInfo.weekEventReg[63] & 0x80) &&
-        (!GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true) || (gSaveContext.save.day != 3) || ((gSaveContext.save.day == 3) && (gSaveContext.save.isNight == 0)))) {
+        (!GameInteractor_Should(VB_MAYOR_STOP_ARGUING, true) || (gSaveContext.save.day != 3) ||
+         ((gSaveContext.save.day == 3) && (gSaveContext.save.isNight == 0)))) {
         Audio_PlaySequenceAtPos(3, &gSfxDefaultPos, 49, 1000.0f);
         Actor_PlaySfx(&this->actor, NA_SE_EV_CROWD - SFX_FLAG);
     }
