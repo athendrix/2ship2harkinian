@@ -7,7 +7,7 @@ extern "C" {
 #include "functions.h"
 }
 
-#define CVAR_NAME "gEnhancements.DifficultyOptions.StopOceansideSpiderHouseSquatter"
+#define CVAR_NAME "gEnhancements.Cycle.StopOceansideSpiderHouseSquatter"
 #define CVAR CVarGetInteger(CVAR_NAME, 0)
 
 void RegisterOceansideSpiderHouseSquatter() {
