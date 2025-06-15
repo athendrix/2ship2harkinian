@@ -785,7 +785,7 @@ s32 func_80A3FBE8(EnTest3* this, PlayState* play) {
         CutsceneManager_SetReturnCamera(CAM_ID_MAIN);
         Environment_StartTime();
         if (((void)0, gSaveContext.save.time) > CLOCK_TIME(6, 0)) {
-            if(GameInteractor_Should(VB_TIMESKIP_AFTER_HIDEOUT, true)) {
+            if (GameInteractor_Should(VB_TIMESKIP_AFTER_HIDEOUT, true)) {
                 Environment_SetTimeJump(TIME_TO_MINUTES_ALT_F(fabsf((s16) - ((void)0, gSaveContext.save.time))));
             }
         }
