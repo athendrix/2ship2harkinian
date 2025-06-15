@@ -1459,6 +1459,11 @@ void BenMenu::AddEnhancements() {
         .Options(CheckboxOptions().Tooltip(
             "Changes the behavior of the man who gives you the wallet so he'll give it to you any day instead of just the first day. "
             "As a side effect, he'll also give you the silver rupee any day, if you already have his wallet."));
+    AddWidget(path, "No timeskip after hideout", WIDGET_CVAR_CHECKBOX)
+        .CVar("gEnhancements.DifficultyOptions.NoTimeskipAfterHideout")
+        .Options(CheckboxOptions().Tooltip(
+            "Normally you get a timeskip to midnight after finishing Sakon's hideout. "
+            "This simply disables that so you don't have to lose 5 precious hours."));
     // HUD Editor
     path = { "Enhancements", "HUD Editor", SECTION_COLUMN_1 };
     AddSidebarEntry("Enhancements", "HUD Editor", 1);

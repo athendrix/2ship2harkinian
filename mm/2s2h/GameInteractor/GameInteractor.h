@@ -249,6 +249,7 @@ typedef enum {
     VB_ALL_NIGHT_TIME_SKIP,
     VB_MAYOR_STOP_ARGUING,
     VB_OCEAN_HOUSE_WALLET_FIRST_DAY_ONLY,
+    VB_TIMESKIP_AFTER_HIDEOUT,
 } GIVanillaBehavior;
 
 typedef enum {
