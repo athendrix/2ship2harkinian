@@ -8,6 +8,7 @@
  */
 
 #include "z_en_sth.h"
+#include "2s2h/GameInteractor/GameInteractor.h"
 
 #define FLAGS (ACTOR_FLAG_TARGETABLE | ACTOR_FLAG_FRIENDLY)
 
@@ -335,7 +336,7 @@ void EnSth_GiveOceansideSpiderHouseReward(EnSth* this, PlayState* play) {
 void EnSth_HandleOceansideSpiderHouseConversation(EnSth* this, PlayState* play) {
     s32 day = CURRENT_DAY - 1;
 
-    if (day < 0) {
+    if (day < 0 || !GameInteractor_Should(VB_OCEAN_HOUSE_WALLET_FIRST_DAY_ONLY, true)) {
         day = 0;
     }
 

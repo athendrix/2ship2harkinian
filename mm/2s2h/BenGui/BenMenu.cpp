@@ -1454,6 +1454,11 @@ void BenMenu::AddEnhancements() {
             "Allows the player to keep the Express Mail in their inventory after delivering it "
             "the first time, so that both deliveries can be done within one cycle."));
     AddWidget(path, "3 Day 100% - Optional", WIDGET_SEPARATOR_TEXT);
+    AddWidget(path, "Oceanside Wallet Any Day", WIDGET_CVAR_CHECKBOX)
+        .CVar("gEnhancements.DifficultyOptions.OceansideWalletAnyDay")
+        .Options(CheckboxOptions().Tooltip(
+            "Changes the behavior of the man who gives you the wallet so he'll give it to you any day instead of just the first day. "
+            "As a side effect, he'll also give you the silver rupee any day, if you already have his wallet."));
     // HUD Editor
     path = { "Enhancements", "HUD Editor", SECTION_COLUMN_1 };
     AddSidebarEntry("Enhancements", "HUD Editor", 1);
